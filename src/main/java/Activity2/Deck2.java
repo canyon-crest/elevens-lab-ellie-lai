@@ -1,5 +1,8 @@
 package Activity2;
 import java.util.List;
+
+import Activity4.Card4;
+
 import java.util.ArrayList;
 
 /**
@@ -28,10 +31,18 @@ public class Deck2 {
 	 * and produces one of the corresponding card.
 	 * @param ranks is an array containing all of the card ranks.
 	 * @param suits is an array containing all of the card suits.
-	 * @param values is an array containing all of the card point values.
+	 * @param values is an array containing all of the card oint values.
 	 */
 	public Deck2(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		cards = new ArrayList<Card2>();
+		for(int i = 0; i<ranks.length; i++) {
+			for(int j = 0; j<suits.length; j++) {
+				Card2 card = new Card2(ranks[j], suits[i], values[j]);
+				cards.add(card);
+			}
+		}
+		size = cards.size();
 	}
 
 
@@ -41,7 +52,10 @@ public class Deck2 {
 	 */
 	public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return true;
+		if(size == 0) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -50,7 +64,7 @@ public class Deck2 {
 	 */
 	public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return -1;
+		return size;
 	}
 
 	/**
@@ -68,8 +82,12 @@ public class Deck2 {
 	 */
 	public Card2 deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return new Card2("","",-1);
-	}
+		if(size == 0) {
+			return null;
+		}
+		size--;
+		Card2 c = cards.get(size);
+		return c;	}
 
 	/**
 	 * Generates and returns a string representation of this deck.
