@@ -19,7 +19,6 @@ public class DeckTester2 {
 		System.out.println(deck.isEmpty());
 		System.out.println(deck);
 
-
 		
 		
 	}

@@ -36,8 +36,8 @@ public class Deck2 {
 	public Deck2(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		cards = new ArrayList<Card2>();
-		for(int i = 0; i<ranks.length; i++) {
-			for(int j = 0; j<suits.length; j++) {
+		for(int i = 0; i<suits.length; i++) {
+			for(int j = 0; j<ranks.length; j++) {
 				Card2 card = new Card2(ranks[j], suits[i], values[j]);
 				cards.add(card);
 			}
