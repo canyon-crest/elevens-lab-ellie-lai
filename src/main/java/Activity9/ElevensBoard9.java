@@ -94,7 +94,7 @@ public class ElevensBoard9 extends Board9 {
 		for(int i = 0; i<selectedCards.size(); i++) {
 			int card1  = selectedCards.get(i).intValue();
 			for(int k = i; k<selectedCards.size(); k++) {
-				int card2 = selectedCards.get(i).intValue();
+				int card2 = selectedCards.get(k).intValue();
 				if((cardAt(card1).pointValue() + cardAt(card2).pointValue()) == 11) {
 					return true;
 				}
